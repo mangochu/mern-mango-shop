@@ -24,14 +24,58 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
-export const MenuItem = styled.div``
+
+export const Top = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 10px;
+display: ${prop => prop.show ? 'none' : 'flex'};
+`
+export const MenuItem = styled.div`
+margin-bottom: 15px;
+`
+
+export const User = styled.div`
+color: darkblue;
+font-size: 25px;
+`
+
+export const Middle = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+display: ${prop => prop.show ? 'flex' : 'none'};
+`
+
+export const MenuLink = styled(Link)`
+margin-bottom: 15px;
+color: black;
+text-decoration: none;
+`
+
+export const MenuItem2 = styled.div`
+color: #555;
+font-size: 20px;
+margin-bottom: 15px;
+`
+
+export const Hr = styled.hr`
+  width: 150px;
+  background-color: #ccc;
+  border: none;
+  height: 1px;
+  margin: 15px 0;
+`;
 
 export const Bottom = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  margin: 0 10px;
-  bottom: 10px;
+  margin: 0 20px;
+  bottom: 30px;
 `
 
 export const Logo = styled(Link)`

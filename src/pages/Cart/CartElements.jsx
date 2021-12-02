@@ -60,6 +60,8 @@ export const Product = styled.div`
 export const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  align-items: center;
+  ${mobile({ flexDirection: 'column'})};
 `;
 
 export const Image = styled.img`
@@ -73,9 +75,13 @@ export const Details = styled.div`
   justify-content: space-around;
 `;
 
-export const ProductName = styled.span``;
+export const ProductColorWrap = styled.div`
+display: flex;
+`
 
-export const ProductId = styled.span``;
+export const ProductItem = styled.span``;
+
+export const ProducColorText = styled.span``;
 
 export const ProductColor = styled.div`
   width: 20px;
@@ -84,8 +90,6 @@ export const ProductColor = styled.div`
   background-color: ${(props) => props.color};
   box-shadow: 3px 3px #ccc;
 `;
-
-export const ProductSize = styled.span``;
 
 export const PriceDetail = styled.div`
   flex: 1;
@@ -131,6 +135,7 @@ export const Hr = styled.hr`
   background-color: #eee;
   border: none;
   height: 1px;
+  margin: 10px 0;
 `;
 
 export const Summary = styled.div`

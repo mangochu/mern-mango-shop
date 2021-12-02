@@ -2,7 +2,7 @@ import { Add, Remove } from "@material-ui/icons";
 import Announcement from "../../components/Announcement"
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
-import { Bottom, Button, Container, Details, Hr, Image, Info, PriceDetail, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductDetail, ProductId, ProductName, ProductPrice, ProductRemove, ProductSize, ProductWrapper, RemoveBtn, Summary, SummaryItem, SummaryItemPrice, SummaryItemText, SummaryTitle, Title, Top, TopButton, TopText, TopTexts, Wrapper } from "./CartElements";
+import { Bottom, Button, Container, Details, Hr, Image, Info, PriceDetail, ProducColorText, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductColorWrap, ProductDetail, ProductItem, ProductPrice, ProductRemove, ProductWrapper, RemoveBtn, Summary, SummaryItem, SummaryItemPrice, SummaryItemText, SummaryTitle, Title, Top, TopButton, TopText, TopTexts, Wrapper } from "./CartElements";
 import { useDispatch, useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
 import { useEffect, useState } from "react";
@@ -34,15 +34,15 @@ const Cart = () => {
   const handleDecreaseCart = (item) => {
     dispatch(decreaseCart(item))
   }
-  
+
   const handleAddToCart = (item) => {
     dispatch(addToCart(item))
   }
-  
-    const handleRemoveFromCart = (item) => {
-      dispatch(removeFromCart(item))
-    }
-  
+
+  const handleRemoveFromCart = (item) => {
+    dispatch(removeFromCart(item))
+  }
+
   const handleClearCart = () => {
     dispatch(clearCart())
   }
@@ -82,16 +82,19 @@ const Cart = () => {
                   <ProductDetail>
                     <Image src={product.img} />
                     <Details>
-                      <ProductName>
+                      <ProductItem>
                         <b>Product:</b> {product.title}
-                      </ProductName>
-                      <ProductId>
+                      </ProductItem>
+                      <ProductItem>
                         <b>ID:</b> {product._id}
-                      </ProductId>
-                      <ProductColor color={product.color} />
-                      <ProductSize>
+                      </ProductItem>
+                      <ProductColorWrap>
+                        <ProducColorText><b>Color:</b></ProducColorText>
+                        <ProductColor color={product.color} />
+                      </ProductColorWrap>
+                      <ProductItem>
                         <b>Size:</b> {product.size}
-                      </ProductSize>
+                      </ProductItem>
                     </Details>
                   </ProductDetail>
                   <PriceDetail>
